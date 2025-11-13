@@ -62,6 +62,7 @@ const Upload = () => {
             await kv.set(`resume:${uuid}`,JSON.stringify(data));
             setStatusText('Analysis complete, redirecting...');
             console.log(data);
+            navigate(`/resume/${uuid}`);
 
         }
         const handleSubmit=(e:FormEvent<HTMLFormElement>)=>{
@@ -95,7 +96,7 @@ const Upload = () => {
                         <form id ="upload-form" onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
                             <div className="form-div">
                                 <label htmlFor="company-name">Company Name</label>
-                                <input type="text" name="company-name" placeholder="Company Name" id="comapany-name"/>
+                                <input type="text" name="company-name" placeholder="Company Name" id="company-name"/>
 
                             </div>
                             <div className="form-div">
